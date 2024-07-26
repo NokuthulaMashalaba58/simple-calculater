@@ -10,12 +10,14 @@ body{
 }
 table{
     width: 100%;
-    padding: 0.163rem;
+    padding: 1rem;
 }
 .inputtext{
-  height: 5vh;
-    width: 90%;
+  height: 20vh;
+    width: 95%;
+    margin-top: 2vh;
     background-color: beige;
+
 
 }
 input{
