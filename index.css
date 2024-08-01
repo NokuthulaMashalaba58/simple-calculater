@@ -3,7 +3,7 @@ body{
     padding-left: 25%;
 }
 .Calculator{
-    background-color: plum;
+    background-color: palevioletred;
     height: 50%;
     width: 40%;
     text-align: center;
@@ -15,10 +15,9 @@ table{
 .inputtext{
   height: 20vh;
     width: 95%;
-    margin-top: 2vh;
-    background-color: beige;
-
-
+   margin-top: 10vh;
+  background-color: beige;
+    
 }
 input{
     /* width: 100%;
@@ -34,7 +33,6 @@ tr{
 td{
     font-weight: bolder;
     
-
      margin: 0px;
     text-align: center;
     line-height: 3;
