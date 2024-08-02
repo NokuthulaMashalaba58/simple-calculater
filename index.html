@@ -8,66 +8,85 @@
 </head>
 <body>
     <h1>Simple Calculator</h1>
-    <div class="Calculator">
+    <div id="Calculator">
         <input type="text" class="inputtext">
         <div class =button>
+            <input id="display">
         <table>
             
             <tr>
-                <td><input type="button" value="C"></td>
-                <td><input type="button" value="()"></td>
-                <td><input type="button" value="%"></td>
-                <td><input type="button" value="/" onclick=Division()></td>
+                <td><input type="button" value="C" onclick="clr('c')"></td>
+                <td><input type="button" value="()"onclick="dis('()')"></td>
+                <td><input type="button" value="%" onclick="dis('%')"></td>
+                <td><input type="button" value="/" onclick=dis()></td>
             </tr>
             <tr>
                 <td><input type="button" value="7" onclick="dis('7')"></td>
                 <td><input type="button" value="8" onclick="dis('8')"></td>
                 <td><input type="button" value="9" onclick="dis('9')"></td>
-                <td><input type="button" value="*" onclick=Multiply()></td>
+                <td><input type="button" value="*" onclick=operators()></td>
             </tr>
             <tr>
                 <td><input type="button" value="4" onclick="dis('4')"></td>
                 <td><input type="button" value="5" onclick="dis('5')"></td>
                 <td><input type="button" value="6" onclick="dis('6')"></td>
-                <td><input type="button" value="-" onclick=Subtract()></td>
+                <td><input type="button" value="-" onclick=operators()></td>
             </tr>
             <tr>
                 <td><input type="button" value="1" onclick="dis('1')"></td>
                 <td><input type="button" value="2" onclick="dis('2')"></td>
                 <td><input type="button" value="3" onclick=" dis('3')"></td>
-                <td><input type="button" value="+" onclick=Addition()></td>
+                <td><input type="button" value="+" onclick="operators('+')"></td>
             </tr>
             <tr>
-                <td><input type="button" value="+/-"></td>
-                <td><input type="button" value="0"></td>
-                <td><input type="button" value=","></td>
-                <td><input type="button" value="=" onclick= Equal()></td>
+                <td><input type="button" value= "+/-" onclick="dis('+/-')"></td>
+                <td><input type="button" value="0" onclick="dis('0')"></td>
+                <td><input type="button" value= "," onclick="dis(',')"></td>
+                <td><input type="button" value="=" onclick= "calculate('=')"></td>
             </tr>
         </table>
 </div>
 </div>
 <script>
 
+        const display = document.getElementById("display");
 
-         var sum = 0
-        function dis(val) { 
-            document.getElementById("result").value += val 
-            sum+=val;
-        }
+        function dis(input){
+           display.value += input;
+         }
 
-function myFunction(event) 
+       function Calculator(){
+        display.value =eval (display.value);
+       }
+  
+       
+       function clr(){
+        display.value =''
+       }
+
+       function calculate(){
+        display.value =eval (display.value);
+       }
+
+       function operators(input){
+       display.value += input;}
+       
+       
+
+
+ function myFunction(event) 
 { 
-            if (event.key == '0' || event.key == '1' 
-                || event.key == '2' || event.key == '3' 
-                || event.key == '4' || event.key == '5' 
-                || event.key == '6' || event.key == '7' 
+           if (event.key == '0' || event.key == '1' 
+              || event.key == '2' || event.key == '3' 
+              || event.key == '4' || event.key == '5' 
+               || event.key == '6' || event.key == '7' 
                 || event.key == '8' || event.key == '9' 
                 || event.key == '+' || event.key == '-' 
                 || event.key == '*' || event.key == '/') 
                 document.getElementById("result").value += event.key; 
 
 
-}
+ } 
 
 </script>
 </body>
